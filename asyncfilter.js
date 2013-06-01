@@ -5,7 +5,9 @@
 async = require('async')
 , fs = require('fs');
 
-async.filter(['file1','file2','file3'], fs.exists, function(results){
-    // results now equals an array of the existing files
+var arr = ['file1','file2','file3'];
+
+async.filter(arr, fs.exists, function(results){
+    // results is a list of the existing files
     console.log('Existing files: ' + results);
 });
